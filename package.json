@@ -9,11 +9,12 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@preact/preset-vite": "^2.8.2",
     "typescript": "^5.2.2",
-    "vite": "^5.2.0",
-    "@preact/preset-vite": "^2.8.2"
+    "vite": "^5.2.0"
   },
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "immer": "^10.1.1",
     "preact": "^10.22.0"
   }

@@ -1,0 +1,24 @@
+<svg viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 0 0 L 7.725424859373686 23.776412907378838 A 25 25 0 0 0 25 0 Z" fill="#77767b"></path>
+    <path d="M 0 0 L -40.450849718747364 29.38926261462366 A 50 50 0 0 0 15.450849718747373 47.552825814757675 Z"
+          fill="#dc8add"></path>
+    <path d="M 0 0 L -60.67627457812107 -44.08389392193548 A 75 75 0 0 0 -60.67627457812105 44.08389392193549 Z"
+          fill="#ffbe6f"></path>
+    <path d="M 0 0 L 23.176274578121042 -71.32923872213652 A 75 75 0 0 0 -60.67627457812107 -44.08389392193548 Z"
+          fill="#f9f06b"></path>
+    <path d="M 0 0 L 100 -2.4492935982947064e-14 A 100 100 0 0 0 30.901699437494724 -95.10565162951536 Z"
+          fill="#8ff0a4"></path>
+    <path d="M 0 0 L 100 0" stroke="black"></path>
+    <path d="M 0 0 L 30.901699437494745 95.10565162951535" stroke="black"></path>
+    <path d="M 0 0 L -80.90169943749473 58.77852522924732" stroke="black"></path>
+    <path d="M 0 0 L -80.90169943749476 -58.7785252292473" stroke="black"></path>
+    <path d="M 0 0 L 30.901699437494724 -95.10565162951536" stroke="black"></path>
+    <circle cx="0" cy="0" r="25" fill="none" stroke="grey"></circle>
+    <circle cx="0" cy="0" r="50" fill="none" stroke="grey"></circle>
+    <circle cx="0" cy="0" r="75" fill="none" stroke="grey"></circle>
+    <text x="80.90169943749474" y="58.778525229247315" text-anchor="start"></text>
+    <text x="-30.901699437494734" y="95.10565162951536" text-anchor="end"></text>
+    <text x="-100" y="1.2246467991473532e-14" text-anchor="end"></text>
+    <text x="-30.901699437494756" y="-95.10565162951535" text-anchor="end"></text>
+    <text x="80.90169943749473" y="-58.778525229247336" text-anchor="start"></text>
+</svg>

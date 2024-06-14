@@ -1,4 +1,4 @@
-import {WheelData, WheelTraitData} from "./wheel.ts";
+import {WheelData, WheelTraitData} from "./wheel.tsx";
 import {h} from 'preact';
 import {Dispatch, StateUpdater} from "preact/hooks";
 import {produce} from "immer";
