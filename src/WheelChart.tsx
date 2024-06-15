@@ -1,4 +1,5 @@
 import {h} from 'preact'
+import {Ref} from "preact/hooks";
 
 const DEGREE_IN_RADIANS = Math.PI / 180.0;
 
@@ -41,13 +42,14 @@ function arcWedgePath(x: number, y: number, radius: number, startAngleRad: numbe
 
 export type WheelChartProps = {
     wheelData: WheelData;
+    svgRef: Ref<SVGSVGElement>;
 }
 export const WheelChart = (props: WheelChartProps) => {
-    const {wheelData} = props;
+    const {wheelData, svgRef} = props;
     const numArcs = wheelData.traits.length
     const arcSize = (Math.PI * 2) / numArcs
 
-    return <svg id={"wheel-chart"} viewBox={"-200 -150 400 300"} xmlns={"http://www.w3.org/2000/svg"}>
+    return <svg ref={svgRef} id={"wheel-chart"} viewBox={"-200 -150 400 300"} xmlns={"http://www.w3.org/2000/svg"}>
         {/*} Coloured Arcs */}
         {wheelData.traits.map((trait, i) => <path
             d={arcWedgePath(0, 0, 100 * (trait.value / 4.0), i * arcSize, arcSize)} fill={trait.colour}></path>)}

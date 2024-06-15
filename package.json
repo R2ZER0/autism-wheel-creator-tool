@@ -10,10 +10,13 @@
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.8.2",
+    "@types/bootstrap": "^5.2.10",
+    "sass": "^1.77.5",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "immer": "^10.1.1",
     "preact": "^10.22.0"
