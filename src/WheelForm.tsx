@@ -75,8 +75,8 @@ function WheelTraitForm(props: {
     }
 
     return <div class={"input-group mb-3"}>
-        <input class={"form-control"} type={"text"} aria-label="Trait Label" value={trait.label}
-               onInput={e => setLabel(e.currentTarget.value)}/>
+        <textarea class={"form-control"} rows={2} aria-label="Trait Label"
+               onInput={e => setLabel(e.currentTarget.value)}>{trait.label}</textarea>
         <select class={"form-select"} aria-label={"Trait Level"} value={trait.value}
                 onInput={e => setValue(parseInt(e.currentTarget.value))}>
             <option value={0}>None</option>

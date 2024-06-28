@@ -16,7 +16,7 @@ export type WheelData = {
 
 function polarToCartesian(centerX: number, centerY: number, radius: number, angleInRadians: number) {
     return {
-        x: centerX + (radius * Math.cos(angleInRadians )),
+        x: centerX + (radius * Math.cos(angleInRadians)),
         y: centerY + (radius * Math.sin(angleInRadians))
     };
 }
@@ -44,6 +44,24 @@ export type WheelChartProps = {
     wheelData: WheelData;
     svgRef: Ref<SVGSVGElement>;
 }
+
+const TextLabel = (props: { xy: { x: number; y: number }, label: string }) => {
+    const {xy, label} = props;
+
+    const goingUp = xy.y < 0
+    const goingLeft = xy.x < 0
+
+    const dy = goingUp ? "-1em" : "1em";
+    const labelParts = label.split("\n");
+    const sortedLabelParts = goingUp ? labelParts.reverse() : labelParts;
+    let spans = sortedLabelParts.map(text => <tspan dy={dy} x={xy.x}>{text}</tspan>)
+    if (goingUp) {
+        spans[0].props["dy"] = "0";
+    }
+
+    return <text x={xy.x} y={xy.y}
+                 text-anchor={goingLeft ? "end" : "start"}>{spans}</text>;
+}
 export const WheelChart = (props: WheelChartProps) => {
     const {wheelData, svgRef} = props;
     const numArcs = wheelData.traits.length
@@ -61,7 +79,7 @@ export const WheelChart = (props: WheelChartProps) => {
         {/* Guide Lines - Arcs */}
         {[1, 2, 3].map(i => <circle cx={0} cy={0} r={100 * (i / 4.0)} fill={"none"} stroke={"grey"}></circle>)}
         {/* Text Labels */}
-        {wheelData.traits.map((trait, i) => (((cxy) => <text x={cxy.x} y={cxy.y}
-                                                                   text-anchor={cxy.x < 0 ? "end" : "start"}>{trait.label}</text>)(polarToCartesian(0, 0, 100, i * arcSize + (arcSize / 2)))))}
+        {wheelData.traits.map((trait, i) => (((cxy) => <TextLabel xy={cxy}
+                                                                  label={trait.label}/>)(polarToCartesian(0, 0, 105, i * arcSize + (arcSize / 2)))))}
     </svg>
 };
